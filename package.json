@@ -1,7 +1,21 @@
 {
+  "devDependencies": {
+    "vitepress": "^0.1.1"
+  },
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
+    "@vue/compiler-sfc": "^3.5.24",
+    "algoliasearch": "^5.43.0",
+    "fs-extra": "^11.3.2",
+    "gray-matter": "^4.0.3",
+    "path": "^0.12.7",
+    "vue": "^3.5.24",
+    "vue-instantsearch": "^4.22.2"
   }
 }
