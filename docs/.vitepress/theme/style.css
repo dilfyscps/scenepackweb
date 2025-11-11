@@ -1,0 +1,180 @@
+:root {
+  color-scheme: dark;
+
+  --vp-c-bg: #1b1b1f;
+  --vp-c-bg-alt: #050505;
+  --vp-c-bg-elv: #222;
+
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: #eaeaea;
+  --vp-c-text-3: #00a0fc;
+
+  --vp-c-brand-1: #23b4e4;
+  --vp-c-brand-2: #95e4ff;
+  --vp-c-brand-3: #25addb;
+
+  --vp-c-border: #2f2f2f;
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #ffffff, #7df0ff);
+
+  --vp-code-block-bg: #242424;
+  --vp-code-block-color: #ffffff;
+}
+
+:root {
+  
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    #ffffff 50%,
+    #ffffff 50%
+  );
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+@media (min-width: 200px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 200px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-custom-block-tip-border: transparent;
+  --vp-custom-block-tip-text: var(--vp-c-text-1);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
+  --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+}
+
+/**
+ * Component: Algolia
+ * -------------------------------------------------------------------------- */
+
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+/* ===== Hero Section ===== */
+.VPHomeHero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  text-align: center;
+  padding: 2rem 1rem;      /* smaller top/bottom padding */
+  gap: 1rem;               /* spacing between elements */
+  overflow: visible !important;
+}
+
+/* Hero text elements */
+.VPHomeHero .name,
+.VPHomeHero .text,
+.VPHomeHero .tagline {
+  margin: 0 auto;
+}
+
+/* Hero name shine */
+.VPHomeHero .name {
+  font-weight: 800;
+  color: transparent !important;
+  background: linear-gradient(120deg, #ffffff, #7df0ff, #ffffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+html[data-theme='light'] .VPHomeHero .name {
+  background: linear-gradient(120deg, #0077cc, #33c2ff, #0077cc);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+/* Hero buttons */
+.VPHomeHero .actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* center horizontally on desktop */
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.VPHomeHero .actions .VPButton {
+  background-color: var(--vp-c-brand-1) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 0 20px rgba(35, 180, 228, 0.4);
+  transition: all 0.3s ease;
+}
+
+html[data-theme='light'] .VPHomeHero .actions .VPButton {
+  background-color: var(--vp-c-brand-1) !important;
+  color: #fff !important;
+  box-shadow: 0 0 15px rgba(0, 119, 204, 0.3);
+}
+
+.VPHomeHero .actions .VPButton:hover {
+  background-color: var(--vp-c-brand-2) !important;
+  box-shadow: 0 0 25px rgba(149, 228, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ===== Mobile & Responsive ===== */
+@media (max-width: 768px) {
+  /* Stack hero words vertically */
+  .VPHomeHero .name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .VPHomeHero .name span {
+    display: block;
+  }
+
+  /* Stack buttons vertically */
+  .VPHomeHero .actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .VPHomeHero .actions .VPButton {
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+}
+
+/* ===== Links ===== */
+a,
+a:visited {
+  color: var(--vp-c-brand-1);
+  text-decoration: none !important;
+}
+a:hover,
+a:focus {
+  color: var(--vp-c-brand-2);
+  text-decoration: none !important;
+}
+
+/* ===== Hero Name Shine Keyframes ===== */
+@keyframes shine {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
